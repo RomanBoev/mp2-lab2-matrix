@@ -154,3 +154,17 @@ TEST(TMatrix, cant_subtract_matrixes_with_not_equal_size)
 	ASSERT_ANY_THROW(m1 - m2);
 }
 
+TEST(TMatrix, can_create_matrix_with_null_length)
+{
+	ASSERT_NO_THROW(TMatrix<int> m(0));
+}
+
+TEST(TMatrix, compare_not_equal_matrices_return_true)
+{
+	TMatrix <int> m1(6);
+	TMatrix <int> m2;
+	m1[0][0] = 2;
+	m2 = m1;
+	m2[0][0] = 10;
+	EXPECT_EQ(1, m1 != m2);
+}

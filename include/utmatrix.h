@@ -306,18 +306,7 @@ TMatrix<ValType>::TMatrix(const TVector<TVector<ValType> >& mt) :
 template <class ValType> // сравнение
 bool TMatrix<ValType>::operator==(const TMatrix<ValType>& mt) const
 {
-  if (this == &mt)
-    return true;
-  if (Size != mt.Size)
-    return false;
-  for (int i = 0; i < Size; i++)
-  {
-    if (pVector[i] != mt.pVector[i])
-    {
-      return false;
-    }
-  }
-  return true;
+  return pVector == mt.pVector;
 } /*-------------------------------------------------------------------------*/
 
 template <class ValType> // сравнение

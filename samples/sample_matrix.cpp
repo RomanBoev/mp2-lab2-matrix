@@ -9,15 +9,23 @@ void main()
   std::cin >> size;
   TMatrix<int> a(size), b(size), c(size);
   setlocale(LC_ALL, "Russian");
-  cout << "" << endl;
+  cout << "Enter first matrix" << endl;
   for (int i = 0; i < size; i++)
   {
     for (int j = i; j < size; j++)
     {
-      a[i][j] = i * 10 + j;
-      b[i][j] = (i * 10 + j) * 100;
+      std::cin >> a[i][j];
     }
   }
+  cout << "Enter second matrix" << endl;
+  for (int i = 0; i < size; i++)
+  {
+    for (int j = i; j < size; j++)
+    {
+      std::cin >> b[i][j];
+    }
+  }
+
   c = a + b;
   cout << "Matrix a = " << endl << a << endl;
   cout << "Matrix b = " << endl << b << endl;

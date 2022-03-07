@@ -215,3 +215,16 @@ TEST(TVector, cant_multiply_vectors_with_not_equal_size)
 	ASSERT_ANY_THROW(v1 * v2);
 }
 
+TEST(TVector, can_create_vector_with_null_length)
+{
+	ASSERT_NO_THROW(TVector<int> v(0));
+}
+TEST(TVector, compare_not_equal_vectors_return_true)
+{
+	TVector<int> v1(3);
+	TVector<int> v2;
+	v1[0] = 2;
+	v2 = v1;
+	v1[1] = 5;
+	EXPECT_EQ(1, v1 != v2);
+}
